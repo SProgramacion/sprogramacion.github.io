@@ -14,12 +14,13 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="assets/styles/bootstrap.min.css" charset="utf-8">
     <link rel="stylesheet" href="assets/styles/animate.min.css" charset="utf-8">
-    <link rel="stylesheet" href="" charset="utf-8">
-    <link rel="stylesheet" href="" charset="utf-8">
-    <link rel="stylesheet" href="" charset="utf-8">
+    <link rel="stylesheet" href="assets/styles/demo.css" charset="utf-8">
+    <link rel="stylesheet" href="assets/styles/material-kit.css" charset="utf-8">
+    <link rel="stylesheet" href="assets/styles/style.css" charset="utf-8">
 
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,200,100,300,500,600,800,900' rel='stylesheet' type='text/css' />
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,700italic,900,400italic,300italic' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
     <script src="assets/js/forms/ajquery/jquery.min.js"></script>
 
@@ -31,10 +32,44 @@
     <meta property="article:published_time" content="2016-02-27T19:14:37.804Z" />
     <meta property="article:modified_time" content="2016-09-21T15:39:06.058Z" />
   </head>
-  <body>
+
+  <body class="landing-page">
+    
     <div id="container"></div>
     <script src="public/build.js" charset="utf-8"></script>
 
     <script src="assets/js/forms/bootstrap.min.js"></script>
+    <!--<script src="assets/js/dependencies/sails.io.js"></script>-->
+    <script src="assets/js/angular/angular.min.js"></script>
+    <script src="assets/js/app_angular/app.js"></script>
+    <script src="assets/js/app_angular/b_services/service_blog.js"></script>
+    <script src="assets/js/app_angular/b_services/service_entrada.js"></script>
+    <script src="assets/js/app_angular/controllers/controller_blog.js"></script>
+    <script src="assets/js/app_angular/controllers/controller_categoria.js"></script>
+    <script src="assets/js/app_angular/controllers/controller_evento.js"></script>
+    <script src="assets/js/app_angular/controllers/controller_home.js"></script>
+    <script src="assets/js/app_angular/controllers/controller_perfil.js"></script>
+    <script src="assets/js/app_angular/filters/filter_capitalize.js"></script>
+    <script src="assets/js/forms/demo.js"></script>
+    <script src="assets/js/forms/material-kit.js"></script>
+    <script src="assets/js/forms/material.min.js"></script>
+    <script src="assets/js/forms/moment-with-locales.min.js"></script>
+    <script src="assets/js/forms/nouislider.min.js"></script>
+
+    <script type="text/javascript">
+      var header_height;
+      var fixed_section;
+      var floating = false;
+
+      $().ready(function() {
+        suggestions_distance = $("#suggestions").offset();
+        pay_height = $('.fixed-section').outerHeight();
+
+        $(window).on('scroll', materialKit.checkScrollForTransparentNavbar);
+
+        // the body of this function is in assets/material-kit.js
+        materialKit.initSliders();
+      });
+    </script>
   </body>
 </html>

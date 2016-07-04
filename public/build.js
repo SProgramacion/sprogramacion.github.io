@@ -61,9 +61,11 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _navComponent = __webpack_require__(170);
+	var _navComponent = __webpack_require__(174);
 
-	var _contentComponent = __webpack_require__(171);
+	var _contentComponent = __webpack_require__(175);
+
+	var _footerComponent = __webpack_require__(176);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -126,7 +128,8 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_navComponent.Nav, null),
-	        _react2.default.createElement(_contentComponent.Content, null)
+	        _react2.default.createElement(_contentComponent.Content, null),
+	        _react2.default.createElement(_footerComponent.Footer, null)
 	      );
 	    }
 	  }]);
@@ -21052,7 +21055,11 @@
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ },
-/* 170 */
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21085,7 +21092,7 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Nav).call(this, props));
 
 	    _this.state = {
-	      title: '@anlijudavid',
+	      title: 'SProgramacion',
 	      subtitle: 'Backend & Frontend',
 	      nav: [{
 	        href: '#banner',
@@ -21112,83 +21119,90 @@
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'div',
-	        null,
+	        'nav',
+	        { className: 'navbar navbar-transparent navbar-absolute', role: 'navigation' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'container-fluid banner text-center', id: 'banner' },
+	          { className: 'container' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'row' },
+	            { className: 'navbar-header' },
 	            _react2.default.createElement(
-	              'div',
-	              { className: 'col-md-12 line' },
+	              'button',
+	              { type: 'button', className: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '#navigation-example' },
 	              _react2.default.createElement(
-	                'div',
-	                { className: 'tablebox' },
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'banner-text', id: 'bannertext' },
-	                  _react2.default.createElement(
-	                    'h1',
-	                    { className: 'hostyle', id: 'heads' },
-	                    this.state.title
-	                  ),
-	                  _react2.default.createElement(
-	                    'p',
-	                    { className: 'pstyle' },
-	                    this.state.subtitle
-	                  ),
-	                  _react2.default.createElement(
-	                    'a',
-	                    { href: '#features', className: 'page-scroll arrow' },
-	                    _react2.default.createElement('i', { className: 'fa fa-angle-down' })
-	                  )
-	                )
-	              )
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'navbar menubar', id: 'menu' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'container' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'navbar-header' },
-	              _react2.default.createElement(
-	                'button',
-	                { type: 'button', className: 'navbar-toggle menu-button', 'data-toggle': 'collapse', 'data-target': '#myNavbar' },
-	                _react2.default.createElement('span', { className: 'glyphicon glyphicon-align-justify' })
+	                'span',
+	                { className: 'sr-only' },
+	                'Toggle navigation'
 	              ),
-	              _react2.default.createElement(
-	                'a',
-	                { className: 'navbar-brand logo', href: '#' },
-	                'Code'
-	              )
+	              _react2.default.createElement('span', { className: 'icon-bar' }),
+	              _react2.default.createElement('span', { className: 'icon-bar' }),
+	              _react2.default.createElement('span', { className: 'icon-bar' })
 	            ),
 	            _react2.default.createElement(
-	              'div',
-	              null,
+	              'a',
+	              { className: 'navbar-brand', href: '/' },
+	              this.state.titulo
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'collapse navbar-collapse', id: 'navigation-example' },
+	            _react2.default.createElement(
+	              'ul',
+	              { className: 'nav navbar-nav navbar-right' },
 	              _react2.default.createElement(
-	                'nav',
-	                { className: 'collapse navbar-collapse', id: 'myNavbar', role: 'navigation' },
+	                'li',
+	                null,
 	                _react2.default.createElement(
-	                  'ul',
-	                  { className: 'nav navbar-nav navbar-right navstyle' },
-	                  this.state.nav.map(function (item, i) {
-	                    return _react2.default.createElement(
-	                      'li',
-	                      { key: i },
-	                      _react2.default.createElement(
-	                        'a',
-	                        { href: item.href, className: item.class },
-	                        item.title
-	                      )
-	                    );
-	                  })
+	                  'a',
+	                  { href: '/acercade#acercade', className: 'btn' },
+	                  'Acerca de'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '/#publicaciones', className: 'btn' },
+	                  'Publicaciones'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '/usuario/signin', className: 'btn' },
+	                  'Login'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: 'https://twitter.com/CreativeTim', target: '_blank', className: 'btn btn-simple' },
+	                  _react2.default.createElement('i', { className: 'fa fa-twitter' })
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: 'https://www.facebook.com/CreativeTim', target: '_blank', className: 'btn btn-simple' },
+	                  _react2.default.createElement('i', { className: 'fa fa-facebook-square' })
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: 'https://www.instagram.com/CreativeTimOfficial', target: '_blank', className: 'btn btn-simple' },
+	                  _react2.default.createElement('i', { className: 'fa fa-instagram' })
 	                )
 	              )
 	            )
@@ -21202,10 +21216,10 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 171 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -21217,10 +21231,6 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _aboutComponent = __webpack_require__(172);
-
-	var _footerComponent = __webpack_require__(173);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21240,12 +21250,53 @@
 	  }
 
 	  _createClass(Content, [{
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(_aboutComponent.About, null)
+	        "div",
+	        { className: "wrapper" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "header header-filter", style: { "background-image": "url(assets/images/photo-1423655156442-ccc11daa4e99.jpg)" } },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "container" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "row" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "col-md-6" },
+	                _react2.default.createElement(
+	                  "h1",
+	                  { className: "title" },
+	                  "Semillero de Programación"
+	                ),
+	                _react2.default.createElement(
+	                  "h4",
+	                  null,
+	                  "Entrenamiento en estrategias de programación, con el propósito de aumentar el nivel en Algoritmia de los equipos que representan a la Universidad de la Amazonia en las Maratones Regionales, Nacionales y Mundiales de Programación."
+	                ),
+	                _react2.default.createElement("br", null),
+	                _react2.default.createElement(
+	                  "a",
+	                  { href: "https://www.youtube.com/watch?v=uvFojBYflTk", className: "btn btn-danger btn-raised btn-lg" },
+	                  _react2.default.createElement("i", { className: "fa fa-play" }),
+	                  "Ver video"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "main main-raised" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "container" },
+	            _react2.default.createElement("div", { className: "section section-landing" })
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -21254,230 +21305,10 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 172 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.About = undefined;
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var About = exports.About = function (_React$Component) {
-	  _inherits(About, _React$Component);
-
-	  function About(props) {
-	    _classCallCheck(this, About);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(About).call(this, props));
-	  }
-
-	  _createClass(About, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "div",
-	        { className: "about", id: "about" },
-	        _react2.default.createElement(
-	          "div",
-	          { className: "container" },
-	          _react2.default.createElement(
-	            "div",
-	            { className: "row" },
-	            _react2.default.createElement(
-	              "div",
-	              { className: "col-md-12 col-sm-12 col-xs-12" },
-	              _react2.default.createElement(
-	                "div",
-	                { className: "alldesc" },
-	                _react2.default.createElement(
-	                  "div",
-	                  { className: "col-md-6 col-sm-6 col-xs-12 centertext" },
-	                  _react2.default.createElement(
-	                    "p",
-	                    { className: "all-td" },
-	                    "What You Want To Know"
-	                  ),
-	                  _react2.default.createElement(
-	                    "h2",
-	                    null,
-	                    "About Us"
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  "div",
-	                  { className: "col-md-6 col-sm-6 col-xs-12" },
-	                  _react2.default.createElement(
-	                    "p",
-	                    { className: "desc" },
-	                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a suscipit nisl. Etiam a facilisis ante. Sed turpis felis, sagittis at risus ut, luctus feugiat ipsum. Lorem ipsum dolor sit amet."
-	                  )
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "div",
-	              { className: "col-md-12 col-sm-12 col-xs-12" },
-	              _react2.default.createElement(
-	                "div",
-	                { className: "progresscount" },
-	                _react2.default.createElement(
-	                  "div",
-	                  { className: "col-md-6 col-sm-6 col-xs-12" },
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-md-6 col-sm-6 col-xs-6 block" },
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "counter-item" },
-	                      _react2.default.createElement(
-	                        "h5",
-	                        null,
-	                        "Our Clients"
-	                      ),
-	                      _react2.default.createElement("div", { className: "timer", "data-from": "0", "data-to": "55", "data-speed": "5000", "data-refresh-interval": "50" })
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-md-6 col-sm-6 col-xs-6" },
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "counter-item" },
-	                      _react2.default.createElement(
-	                        "h5",
-	                        null,
-	                        "Projects completed"
-	                      ),
-	                      _react2.default.createElement("div", { className: "timer", "data-from": "0", "data-to": "88", "data-speed": "5000", "data-refresh-interval": "50" })
-	                    )
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  "div",
-	                  { className: "col-md-6 col-sm-6 col-xs-12" },
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "progresstitle" },
-	                    _react2.default.createElement(
-	                      "h5",
-	                      null,
-	                      "HTML5"
-	                    ),
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "progress progress-style" },
-	                      _react2.default.createElement(
-	                        "div",
-	                        { className: "progress-bar progress-bar-striped", role: "progressbar", "aria-valuenow": "80", "aria-valuemin": "0", "aria-valuemax": "100", style: { "width": "80%" } },
-	                        " 80% "
-	                      )
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "progresstitle" },
-	                    _react2.default.createElement(
-	                      "h5",
-	                      null,
-	                      "ReactJS"
-	                    ),
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "progress progress-style" },
-	                      _react2.default.createElement(
-	                        "div",
-	                        { className: "progress-bar progress-bar-striped", role: "progressbar", "aria-valuenow": "74", "aria-valuemin": "0", "aria-valuemax": "100", style: { "width": "60%" } },
-	                        " 60% "
-	                      )
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "progresstitle" },
-	                    _react2.default.createElement(
-	                      "h5",
-	                      null,
-	                      "AngularJS 1 & AngularJS 2"
-	                    ),
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "progress progress-style" },
-	                      _react2.default.createElement(
-	                        "div",
-	                        { className: "progress-bar progress-bar-striped", role: "progressbar", "aria-valuenow": "65", "aria-valuemin": "0", "aria-valuemax": "100", style: { "width": "85%" } },
-	                        " 85% "
-	                      )
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "progresstitle" },
-	                    _react2.default.createElement(
-	                      "h5",
-	                      null,
-	                      "NodeJS"
-	                    ),
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "progress progress-style" },
-	                      _react2.default.createElement(
-	                        "div",
-	                        { className: "progress-bar progress-bar-striped", role: "progressbar", "aria-valuenow": "65", "aria-valuemin": "0", "aria-valuemax": "100", style: { "width": "95%" } },
-	                        " 95% "
-	                      )
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "progresstitle" },
-	                    _react2.default.createElement(
-	                      "h5",
-	                      null,
-	                      "Databases: NoSQL & SQL"
-	                    ),
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "progress progress-style" },
-	                      _react2.default.createElement(
-	                        "div",
-	                        { className: "progress-bar progress-bar-striped", role: "progressbar", "aria-valuenow": "65", "aria-valuemin": "0", "aria-valuemax": "100", style: { "width": "90%" } },
-	                        " 90% "
-	                      )
-	                    )
-	                  )
-	                )
-	              )
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return About;
-	}(_react2.default.Component);
-
-/***/ },
-/* 173 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -21508,9 +21339,54 @@
 	  }
 
 	  _createClass(Footer, [{
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
-	      return _react2.default.createElement('div', null);
+	      return _react2.default.createElement(
+	        "footer",
+	        { className: "footer" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "container" },
+	          _react2.default.createElement(
+	            "nav",
+	            { className: "pull-left" },
+	            _react2.default.createElement(
+	              "ul",
+	              null,
+	              _react2.default.createElement(
+	                "li",
+	                null,
+	                _react2.default.createElement(
+	                  "a",
+	                  { href: "/acercade#acercade" },
+	                  "Acerca de"
+	                )
+	              ),
+	              _react2.default.createElement(
+	                "li",
+	                null,
+	                _react2.default.createElement(
+	                  "a",
+	                  { href: "/" },
+	                  "Blog"
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "copyright pull-right" },
+	            "© 2016, made with",
+	            _react2.default.createElement("i", { className: "fa fa-heart heart" }),
+	            "by ",
+	            _react2.default.createElement(
+	              "a",
+	              { href: "http://www.twitter.com/anlijudavid" },
+	              "@anlijudavid"
+	            )
+	          )
+	        )
+	      );
 	    }
 	  }]);
 

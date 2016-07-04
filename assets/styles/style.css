@@ -3,3 +3,7 @@ img.article-image {
   height: auto;
   box-shadow: 0px 0px 8px 0px rgba(0,0,0,.5);
 }
+
+.header header-filter {
+  background-image: url('assets/images/photo-1423655156442-ccc11daa4e99.jpg');
+}

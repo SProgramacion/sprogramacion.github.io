@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Nav } from './components/nav/nav.component.jsx';
-import { Content } from './components/content.component.jsx';
+import { Nav } from './components/index/nav/nav.component.jsx';
+import { Content } from './components/index/content/content.component.jsx';
+import { Footer } from './components/index/footer/footer.component.jsx';
 
 export class Main extends React.Component {
 
@@ -39,6 +40,7 @@ export class Main extends React.Component {
       <div>
         <Nav />
         <Content />
+        <Footer />
       </div>
     )
   }
