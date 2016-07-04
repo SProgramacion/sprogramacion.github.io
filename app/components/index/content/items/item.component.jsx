@@ -14,7 +14,7 @@ export class Item extends React.Component {
             {this.props.titulo}
           </h2>
           <small>
-            Publicado por
+            Publicado por &nbsp;
             {this.props.nick}
             <br />
             {this.props.fecha}
@@ -36,3 +36,12 @@ export class Item extends React.Component {
   }
 
 }
+
+Item.propTypes = {
+  titulo: React.PropTypes.node.isRequired,
+  nick: React.PropTypes.node.isRequired,
+  fecha: React.PropTypes.node.isRequired,
+  resumen: React.PropTypes.node.isRequired,
+  categoria: React.PropTypes.node.isRequired,
+  href: React.PropTypes.node.isRequired
+};

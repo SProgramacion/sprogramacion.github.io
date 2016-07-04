@@ -53,12 +53,12 @@ export class Nav extends React.Component {
                 </a>
               </li>
               <li>
-                <a href="/#publicaciones" className="btn">
+                <a href="#publicaciones" className="btn">
                   Publicaciones
                 </a>
               </li>
               <li>
-                <a href="/usuario/signin" className="btn">
+                <a href="http://45.55.50.95:1337/usuario/signin" className="btn">
                   Login
                 </a>
               </li>

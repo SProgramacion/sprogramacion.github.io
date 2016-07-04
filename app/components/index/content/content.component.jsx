@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Items } from './items/items.component.jsx';
+
 export class Content extends React.Component {
 
   constructor(props) {
@@ -29,6 +31,7 @@ export class Content extends React.Component {
           <div className="container">
             <div className="section section-landing">
 
+              <Items />
 
             </div>
           </div>

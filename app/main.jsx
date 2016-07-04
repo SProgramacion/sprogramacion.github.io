@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, hashHistory } from 'react-router';
 
 import { Nav } from './components/index/nav/nav.component.jsx';
 import { Content } from './components/index/content/content.component.jsx';
@@ -46,4 +47,8 @@ export class Main extends React.Component {
   }
 }
 
-ReactDOM.render(<Main />, document.getElementById('container'));
+ReactDOM.render(
+  <Router history={hashHistory} >
+    <Route path="/" component={Main} />
+  </Router>
+, document.getElementById('container'));
